@@ -1,0 +1,10 @@
+
+service log_bg /system/bin/sh /system/bin/log_bg.sh
+    user root
+    group root system
+    disabled
+    oneshot
+
+on property:sys.boot_completed=1
+    start log_bg
+
